@@ -13,7 +13,7 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 
-BELL_BEARING_NAMES = [
+BELL_BEARING_NAMES = {
     "Smithing-Stone Miner's Bell Bearing [1]",
     "Smithing-Stone Miner's Bell Bearing [2]",
     "Smithing-Stone Miner's Bell Bearing [3]",
@@ -23,28 +23,31 @@ BELL_BEARING_NAMES = [
     "Somberstone Miner's Bell Bearing [3]",
     "Somberstone Miner's Bell Bearing [4]",
     "Somberstone Miner's Bell Bearing [5]",
-]
+}
 
-KEY_ITEM_NAMES = [
+GREAT_RUNE_NAMES = {
+    "Godrick's Great Rune",
+    "Great Rune of the Unborn",
+    "Malenia's Great Rune",
+    "Mohg's Great Rune",
+    "Morgott's Great Rune",
+    "Radahn's Great Rune",
+    "Rykard's Great Rune"
+}
+
+OTHER_KEY_ITEM_NAMES = {
     "Academy Glintstone Key",
     "Carian Inverted Statue",
     "Dectus Medallion (Left)",
     "Dectus Medallion (Right)",
     "Discarded Palace Key",
     "Drawing-Room Key",
-    "Godrick's Great Rune",
-    "Great Rune of the Unborn",
     "Haligtree Secret Medallion (Left)",
     "Haligtree Secret Medallion (Right)",
-    "Malenia's Great Rune",
-    "Mohg's Great Rune",
-    "Morgott's Great Rune",
     "Pureblood Knight's Medal",
-    "Radahn's Great Rune",
     "Rold Medallion",
-    "Rusty Key",
-    "Rykard's Great Rune",
-]
+    "Rusty Key"
+}
 
 ITEM_REPLACEMENT_PATTERN = re.compile(r'^(.+) in (.+): (.+)\. Replaces (.+)\.$')
 
@@ -108,7 +111,7 @@ class SpoilerLog:
 
         self.reveal_bell_bearing_locations = True
         self.reveal_key_item_locations = True
-        self.reveal_major_boss_replacements = True
+        self.reveal_boss_replacements = True
 
     def add_log_lines(self, log_lines):
         if (m := re.match(r'^.*seed:(\d+).*$', log_lines[0])):
@@ -121,9 +124,9 @@ class SpoilerLog:
 
     def identify_item_locations(self):
         items_to_find = (
-            set(BELL_BEARING_NAMES) if self.reveal_bell_bearing_locations else set()
+            BELL_BEARING_NAMES if self.reveal_bell_bearing_locations else set()
         ) | (
-            set(KEY_ITEM_NAMES) if self.reveal_key_item_locations else set()
+            (GREAT_RUNE_NAMES | OTHER_KEY_ITEM_NAMES) if self.reveal_key_item_locations else set()
         )
 
         for line in self.log_lines[self.log_lines.index('-- Spoilers:'):]:
@@ -143,7 +146,7 @@ class SpoilerLog:
 
                 if item_name == replacement_item_name:
                     item_location_tuple += ('itself',)
-                elif replacement_item_name in KEY_ITEM_NAMES:
+                elif (replacement_item_name in GREAT_RUNE_NAMES) or (replacement_item_name in OTHER_KEY_ITEM_NAMES):
                     item_location_tuple += (replacement_item_name,)
                     
                 self.item_dict[item_name] = item_location_tuple
@@ -160,7 +163,10 @@ class SpoilerLog:
                 desc = f'"{t[0]}" is in {item_location_tuple[0]}, {item_location_tuple[1][0].lower()}{item_location_tuple[1][1:]}'
 
                 try:
-                    desc += f' (replacing "{item_location_tuple[2]}").'
+                    if (replacement_item_name := item_location_tuple[2]) == 'itself':
+                        desc += ' (replacing itself).'
+                    else:
+                        desc += f' (replacing "{replacement_item_name}").'
                 except IndexError:
                     desc += '.'
 
@@ -171,17 +177,22 @@ class SpoilerLog:
         return ret
     
     def reveal_all_item_locations(self):
-        if self.reveal_bell_bearing_locations or self.reveal_key_item_locations:
-            if not self.item_dict:
-                self.identify_item_locations()
-            
-            return [self.reveal_item_location(item_name)[0] for item_name in sorted(
-                self.item_dict.keys(), key=lambda k: KEY_ITEM_NAMES.index(k) if k in KEY_ITEM_NAMES else 18 + BELL_BEARING_NAMES.index(k)
-            )]
+        if not self.item_dict:
+            self.identify_item_locations()
+
+        item_sets = (
+            [GREAT_RUNE_NAMES, OTHER_KEY_ITEM_NAMES] if self.reveal_key_item_locations else []
+        ) + (
+            [BELL_BEARING_NAMES] if self.reveal_bell_bearing_locations else []
+        )
+        
+        return [
+            [self.reveal_item_location(item_name)[0] for item_name in sorted(item_set)]
+        for item_set in item_sets]
 
 
     def identify_boss_replacements(self):
-        if self.reveal_major_boss_replacements:
+        if self.reveal_boss_replacements:
             start_ix = self.log_lines.index('-- Boss placements')
             end_ix = self.log_lines.index('-- Miniboss placements')
 
@@ -192,6 +203,8 @@ class SpoilerLog:
                     # case handling for otherwise ambiguous/confusing boss names
                     if boss_id == 30120800:
                         val = 'Misbegotten Warrior & Perfumer Tricia'
+                    elif boss_id == 31180800:
+                        val = 'Miranda the Blighted Bloom & Omenkiller'
                     elif boss_id == 1051360800:
                         val = 'Crucible Knight & Misbegotten Warrior'
                     elif boss_id == 30030800:
@@ -226,7 +239,7 @@ class SpoilerLog:
         return f'{best_match} → {self.boss_id_dict[BOSS_IDS[best_match]]}'
 
     def reveal_major_boss_replacements(self):
-        if self.reveal_major_boss_replacements:
+        if self.reveal_boss_replacements:
             if not self.boss_id_dict:
                 self.identify_boss_replacements()
 
@@ -235,7 +248,7 @@ class SpoilerLog:
             for boss_replacement_tuple in NOTED_BOSS_IDS if boss_replacement_tuple[1]]
     
     def reveal_core_progression_boss_replacements(self):
-        if self.reveal_major_boss_replacements:
+        if self.reveal_boss_replacements:
             if not self.boss_id_dict:
                 self.identify_boss_replacements()
 
@@ -254,7 +267,7 @@ spoiler_log = SpoilerLog()
 
 @bot.event
 async def on_ready():
-    await bot.guilds[0].text_channels[0].send(
+    await bot.guilds[0].text_channels[1].send(
         f'{bot.user.name} is in the "{bot.guilds[0].name}" server and ready to chop some logs! 😁'
     )
 
@@ -270,7 +283,7 @@ async def on_message(message):
             except (LogParseException, UnicodeDecodeError):
                 continue
 
-            await message.channel.send('Got it! Log file added and parsed 👌')
+            await message.channel.send('Got it! Log file added and chopped 👌')
             break
 
         await bot.process_commands(message)
@@ -315,24 +328,14 @@ async def where_is(ctx, *, item_name):
 @bot.command(name='all-items', help='Reveals all currently enabled item locations.')
 async def all_items(ctx):
     try:
-        if (item_location_lines := spoiler_log.reveal_all_item_locations()):
-            item_location_lines = deque(item_location_lines)
-            responses = []
+        if (item_location_line_lists := spoiler_log.reveal_all_item_locations()):
+            responses = [
+                f'For the randomization with seed "{spoiler_log.seed}", the key items can be found in the following locations:\n\n||' + \
+                    '\n'.join(item_location_line_lists[0]) + '||'
+            ]
             
-            current_response = f'For the randomization with seed "{spoiler_log.seed}", the key items can be found in the following locations:\n||'
-            
-            while True:
-                try:
-                    line = item_location_lines.popleft()
-                except IndexError:
-                    responses.append(current_response + '||')
-                    break
-
-                if len(current_response) + len(line) <= 1997:
-                    current_response += '\n' + line
-                else:
-                    responses.append(current_response + '||')
-                    current_response = '||' + line
+            for item_location_line_list in item_location_line_lists[1:]:
+                responses.append('||' + '\n'.join(item_location_line_list) + '||')
         else:
             responses = ['No item locations are currently enabled.']
     except AttributeError:
@@ -342,19 +345,19 @@ async def all_items(ctx):
         await ctx.send(response)
 
 
-@bot.command(name='enable-boss-replacements', help='Enables revealing of major boss replacements.')
+@bot.command(name='enable-boss-replacements', help='Enables revealing of boss replacements.')
 async def enable_boss_replacements(ctx):
-    spoiler_log.reveal_major_boss_replacements = True
+    spoiler_log.reveal_boss_replacements = True
     await ctx.send(f'Revealing of major boss replacements enabled for randomization with seed "{spoiler_log.seed}".')
 
 
-@bot.command(name='disable-boss-replacements', help='Disables revealing of major boss replacements.')
+@bot.command(name='disable-boss-replacements', help='Disables revealing of boss replacements.')
 async def disable_boss_replacements(ctx):
-    spoiler_log.reveal_major_boss_replacements = False
+    spoiler_log.reveal_boss_replacements = False
     await ctx.send(f'Revealing of major boss replacements disabled for randomization with seed "{spoiler_log.seed}".')
 
 
-@bot.command(name='who-replaces', help='Reveals the boss replacing a specified major boss.')
+@bot.command(name='who-replaces', help='Reveals the boss replacing a specified boss.')
 async def who_replaces(ctx, *, boss_name):
     try:
         response = spoiler_log.reveal_boss_replacement(boss_name)
@@ -369,61 +372,29 @@ async def who_replaces(ctx, *, boss_name):
 @bot.command(name='major-bosses', help='Reveals the bosses replacing all major bosses.')
 async def major_bosses(ctx):
     try:
-        if (boss_replacement_lines := spoiler_log.reveal_major_boss_replacements()):
-            boss_replacement_lines = deque(boss_replacement_lines)
-            responses = []
-            
-            current_response = f'For the randomization with seed "{spoiler_log.seed}", the following bosses have replaced the major bosses:\n||'
-            
-            while True:
-                try:
-                    line = boss_replacement_lines.popleft()
-                except IndexError:
-                    responses.append(current_response + '||')
-                    break
-
-                if len(current_response) + len(line) <= 1997:
-                    current_response += '\n' + line
-                else:
-                    responses.append(current_response + '||')
-                    current_response = '||' + line
+        if (boss_replacement_lines := spoiler_log.reveal_major_boss_replacements()):            
+            response = f'For the randomization with seed "{spoiler_log.seed}", the following bosses have replaced the major bosses:\n\n||' + \
+                '\n'.join(boss_replacement_lines) + '||'
         else:
-            responses = ['Revealing boss replacements is currently disabled.']
+            response = 'Revealing boss replacements is currently disabled.'
     except AttributeError:
-        responses = ["Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."]
+        response = "Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."
 
-    for response in responses:
-        await ctx.send(response)
+    await ctx.send(response)
 
 
-@bot.command(name='core-progression', help='Reveals the bosses replacing the strictly necessary bosses.')
+@bot.command(name='core-progression', help='Reveals the bosses replacing those guarding core progression.')
 async def core_progression(ctx):
     try:
-        if (boss_replacement_lines := spoiler_log.reveal_core_progression_boss_replacements()):
-            boss_replacement_lines = deque(boss_replacement_lines)
-            responses = []
-            
-            current_response = f'For the randomization with seed "{spoiler_log.seed}", the following bosses have replaced those guarding core progression:\n||'
-            
-            while True:
-                try:
-                    line = boss_replacement_lines.popleft()
-                except IndexError:
-                    responses.append(current_response + '||')
-                    break
-
-                if len(current_response) + len(line) <= 1997:
-                    current_response += '\n' + line
-                else:
-                    responses.append(current_response + '||')
-                    current_response = '||' + line
+        if (boss_replacement_lines := spoiler_log.reveal_core_progression_boss_replacements()):            
+            response = f'For the randomization with seed "{spoiler_log.seed}", the following bosses have replaced those guarding core progression:\n\n||' + \
+                '\n'.join(boss_replacement_lines) + '||'
         else:
-            responses = ['Revealing boss replacements is currently disabled.']
+            response = 'Revealing boss replacements is currently disabled.'
     except AttributeError:
-        responses = ["Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."]
+        response = "Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."
 
-    for response in responses:
-        await ctx.send(response)
+    await ctx.send(response)
 
 
 bot.run(TOKEN)
