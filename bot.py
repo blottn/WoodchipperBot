@@ -43,7 +43,6 @@ async def main():
         await bot.load_extension('cogs.item_placements')
         await bot.load_extension('cogs.boss_placements')
         await bot.load_extension('cogs.options')
-        # await bot.load_extension('cogs.custom_boss_lists')
 
         await bot.start(TOKEN)
 
