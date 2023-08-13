@@ -32,7 +32,7 @@ async def on_message(message):
             except (LogParseException, UnicodeDecodeError):
                 continue
 
-            await message.channel.send('Got it! Log file added and chopped 👌')
+            await message.channel.send('Got it! Log file added and chopped 🪓')
             break
 
         await bot.process_commands(message)
