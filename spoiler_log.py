@@ -56,6 +56,7 @@ NOTED_BOSS_IDS = [
     ("Fire Giant", True, True, 1052520801, 1052520800),
     ("Godskin Duo", True, True, 13000850),
     ("Beast Clergyman / Maliketh, the Black Blade", True, True, 13000801, 13000800),
+    ("Sir Gideon Ofnir, the All-Knowing", True, True, 11050850),
     ("Godfrey, First Elden Lord / Hoarah Loux, Warrior", True, True, 11050801, 11050800),
     ("Radagon of the Golden Order / Elden Beast", True, True, 19000810, 19000800),
     ("Leonine Misbegotten", True, False, 1043300800),
