@@ -39,6 +39,38 @@ OTHER_KEY_ITEM_NAMES = {
     "Rusty Key"
 }
 
+PHYSICK_TEAR_NAMES = {
+    "Crimson Crystal Tear"
+    "Crimsonspill Crystal Tear",
+    "Crimsonburst Crystal Tear",
+    "Cerulean Crystal Tear",
+    "Greenspill Crystal Tear",
+    "Greenburst Crystal Tear",
+    "Strength-knot Crystal Tear",
+    "Dexterity-knot Crystal Tear",
+    "Intelligence-knot Crystal Tear",
+    "Faith-knot Crystal Tear",
+    "Opaline Hardtear",
+    "Speckled Hardtear",
+    "Leaden Hardtear",
+    "Magic-Shrouding Cracked Tear",
+    "Flame-Shrouding Cracked Tear",
+    "Lightning-Shrouding Cracked Tear",
+    "Holy-Shrouding Cracked Tear",
+    "Stonebarb Cracked Tear",
+    "Spiked Cracked Tear",
+    "Thorny Cracked Tear",
+    "Twiggy Cracked Tear",
+    "Winged Crystal Tear",
+    "Windy Crystal Tear",
+    "Crimson Bubbletear",
+    "Crimsonwhorl Bubbletear",
+    "Opaline Bubbletear",
+    "Cerulean Hidden Tear",
+    "Purifying Crystal Tear",
+    "Ruptured Crystal Tear"
+}
+
 ITEM_REPLACEMENT_PATTERN = re.compile(r'^(.+) in (.+): (.+)\. Replaces (.+)\.$')
 
 GREAT_RUNE_ACTIVATION_PATTERN = re.compile(r'^(.+) in .+: Activating \1. Replaces \1.$')
@@ -118,6 +150,7 @@ class SpoilerLog:
 
         self.reveal_bell_bearing_locations = True
         self.reveal_key_item_locations = True
+        self.reveal_physick_tear_locations = True
         self.reveal_boss_replacements = True
 
     def add_log_lines(self, log_lines):
@@ -134,6 +167,8 @@ class SpoilerLog:
             BELL_BEARING_NAMES if self.reveal_bell_bearing_locations else set()
         ) | (
             (GREAT_RUNE_NAMES | OTHER_KEY_ITEM_NAMES) if self.reveal_key_item_locations else set()
+        ) | (
+            PHYSICK_TEAR_NAMES if self.reveal_physick_tear_locations else set()
         )
 
         for line in self.log_lines[self.log_lines.index('-- Spoilers:'):]:
