@@ -40,7 +40,7 @@ OTHER_KEY_ITEM_NAMES = {
 }
 
 PHYSICK_TEAR_NAMES = {
-    "Crimson Crystal Tear"
+    "Crimson Crystal Tear",
     "Crimsonspill Crystal Tear",
     "Crimsonburst Crystal Tear",
     "Cerulean Crystal Tear",
@@ -133,7 +133,6 @@ def _get_best_boss_replacement_match(boss_name):
 
     return match_tuples[0][0]
 
-
 class LogParseException(Exception):
     def __init__(self, message):
         super().__init__(message)
@@ -144,16 +143,7 @@ class UnknownItemException(Exception):
 
 
 class SpoilerLog:
-    def __init__(self):    
-        self.boss_id_dict = {}
-        self.item_dict = {}
-
-        self.reveal_bell_bearing_locations = True
-        self.reveal_key_item_locations = True
-        self.reveal_physick_tear_locations = True
-        self.reveal_boss_replacements = True
-
-    def add_log_lines(self, log_lines):
+    def __init__(self, log_lines):
         if (m := re.match(r'^.*seed:(\d+).*$', log_lines[0])):
             self.log_lines = log_lines
             self.seed = m.group(1)
@@ -161,6 +151,14 @@ class SpoilerLog:
             raise LogParseException(
                 f'Could not parse line "{log_lines[0]}".'
             )
+
+        self.boss_id_dict = {}
+        self.item_dict = {}
+
+        self.reveal_bell_bearing_locations = True
+        self.reveal_key_item_locations = True
+        self.reveal_physick_tear_locations = True
+        self.reveal_boss_replacements = True
 
     def identify_item_locations(self):
         items_to_find = (
@@ -199,7 +197,7 @@ class SpoilerLog:
 
         ret = []
 
-        for t in (match_tuples := process.extract(item_name, self.item_dict.keys())):
+        for t in (match_tuples := process.extract(item_name, self.item_dict.keys(), scorer=fuzz.token_set_ratio)):
             if t[1] == match_tuples[0][1]:
                 item_location_tuple = self.item_dict[t[0]]
                 desc = f'"{t[0]}" is in {item_location_tuple[0]}, {item_location_tuple[1][0].lower()}{item_location_tuple[1][1:]}'
@@ -231,7 +229,6 @@ class SpoilerLog:
         return [
             [self.reveal_item_location(item_name)[0] for item_name in sorted(item_set)]
         for item_set in item_sets]
-
 
     def identify_boss_replacements(self):
         if self.reveal_boss_replacements:

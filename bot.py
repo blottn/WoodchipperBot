@@ -13,7 +13,6 @@ INTENTS = discord.Intents.default()
 INTENTS.message_content = True
 
 bot = Bot(command_prefix='!', intents=INTENTS)
-bot.spoiler_log = SpoilerLog()
 
 
 @bot.event
@@ -28,7 +27,7 @@ async def on_message(message):
             body = await attachment.read()
 
             try:
-                bot.spoiler_log.add_log_lines(body.decode().split('\r\n'))
+                bot.spoiler_log = SpoilerLog(body.decode().split('\r\n'))         
             except (LogParseException, UnicodeDecodeError):
                 continue
 
@@ -43,6 +42,7 @@ async def main():
         await bot.load_extension('cogs.item_placements')
         await bot.load_extension('cogs.boss_placements')
         await bot.load_extension('cogs.options')
+        # await bot.load_extension('cogs.custom_boss_lists')
 
         await bot.start(TOKEN)
 
