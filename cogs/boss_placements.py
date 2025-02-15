@@ -25,18 +25,21 @@ def get_best_boss_name(text):
         return best_match[0]
 
 
-# needs to be looked at
-
 def get_bosses_combine_phases(ctx : discord.AutocompleteContext):
-    best_matches : list[tuple] = process.extract(ctx.value, BOSS_INFO_BY_NAME.keys())
-    return sorted([best_match[0] for best_match in best_matches if best_match[1] >= 90], key=lambda t: t[1], reverse=True)
+    with_phases_split = {
+        phase_name: combined_name
+    for combined_name in BOSS_INFO_BY_NAME.keys() for phase_name in combined_name.split(' / ')}
 
+    best_matches : list[tuple] = process.extract(ctx.value, with_phases_split.keys())
 
-# needs to be looked at
+    return [
+        with_phases_split[best_match[0]] 
+    for best_match in sorted(best_matches, key=lambda t: t[1], reverse=True) if best_match[1] >= 90]
+
 
 def get_bosses_split_phases(ctx : discord.AutocompleteContext):
     best_matches : list[tuple] = process.extract(ctx.value, {info[0] for info in BOSS_INFO_BY_ID.values()})
-    return sorted([best_match[0] for best_match in best_matches if best_match[1] >= 90], key=lambda t: t[1], reverse=True)
+    return [best_match[0] for best_match in sorted(best_matches, key=lambda t: t[1], reverse=True) if best_match[1] >= 90]
 
 
 def get_guild_boss_list_names(ctx : discord.AutocompleteContext):
