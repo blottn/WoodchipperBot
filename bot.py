@@ -1,9 +1,7 @@
-import asyncio
 import discord
 import os
-from discord.ext.commands import Bot
 from dotenv import load_dotenv
-from spoiler_log import LogParseException, SpoilerLog
+from attachment_parsing import parse_message_attachments
 
 
 load_dotenv()
@@ -12,7 +10,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
 
-bot = Bot(command_prefix='!', intents=INTENTS)
+bot = discord.Bot(intents=INTENTS)
 
 
 @bot.event
@@ -23,29 +21,16 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     if message.author != bot.user:
-        for attachment in message.attachments:
-            body = await attachment.read()
+        parse_result = await parse_message_attachments(message)
 
-            try:
-                bot.spoiler_log = SpoilerLog(body.decode().split('\r\n'))         
-            except (LogParseException, UnicodeDecodeError):
-                continue
-
-            await message.channel.send('Got it! Log file added and chopped 🪓')
-            break
-
-        await bot.process_commands(message)
+        if parse_result:
+            bot.spoiler_log = parse_result[0]
+            await message.channel.send('Got it! Log file added and chopped. 🪓')
 
 
-async def main():
-    async with bot:
-        await bot.load_extension('cogs.item_placements')
-        await bot.load_extension('cogs.boss_placements')
-        await bot.load_extension('cogs.options')
-        # await bot.load_extension('cogs.custom_boss_lists')
-
-        await bot.start(TOKEN)
+bot.load_extension('cogs.item_placements')
+bot.load_extension('cogs.boss_placements')
+bot.load_extension('cogs.misc')
 
 
-if __name__ == '__main__':
-    asyncio.run(main())
+bot.run(TOKEN)

@@ -1,0 +1,874 @@
+{
+    "1044360800": [
+        "Mad Pumpkin Head Boss",
+        "Limgrave - Waypoint Ruins"
+    ],
+    "32010800": [
+        "Stonedigger Troll",
+        "Limgrave Tunnels"
+    ],
+    "31170800": [
+        "Guardian Golem Boss",
+        "Highroad Cave"
+    ],
+    "31150800": [
+        "Demi-Human Chief Duo",
+        "Coastal Cave"
+    ],
+    "31030800": [
+        "Beastman of Farum Azula Boss",
+        "Groveside Cave"
+    ],
+    "30110800": [
+        "Black Knife Assassin Boss",
+        "Deathtouched Catacombs"
+    ],
+    "30040800": [
+        "Grave Warden Duelist Boss",
+        "Murkwater Catacombs"
+    ],
+    "30020800": [
+        "Fire Erdtree Burial Watchdog Boss",
+        "Stormfoot Catacombs"
+    ],
+    "18000850": [
+        "Soldier of Godrick",
+        "Stranded Graveyard"
+    ],
+    "32000800": [
+        "Scaly Misbegotten Boss",
+        "Morne Tunnel"
+    ],
+    "31020800": [
+        "Miranda Blossom and Sprouts",
+        "Tombsward Cave"
+    ],
+    "31010800": [
+        "Runebear Boss",
+        "Earthbore Cave"
+    ],
+    "30010800": [
+        "Erdtree Burial Watchdog and Imps",
+        "Impaler's Catacombs"
+    ],
+    "30000800": [
+        "Cemetery Shade Boss",
+        "Tombsward Catacombs"
+    ],
+    "1045390800": [
+        "Tibia Mariner Boss",
+        "Limgrave - Summonwater Village"
+    ],
+    "1044350800": [
+        "Bloodhound Knight Darriwil",
+        "Limgrave - Agheel Lake South, Forlorn Hound Evergaol"
+    ],
+    "1043370340": [
+        "Night's Cavalry",
+        "Limgrave - Agheel Lake North, Murkwater Cave Entrance"
+    ],
+    "1043300800": [
+        "Leonine Misbegotten Boss",
+        "Weeping Peninsula - Morne Moangrave"
+    ],
+    "1042380850": [
+        "Bell Bearing Hunter",
+        "Stormhill - Warmaster's Shack, Stormgate"
+    ],
+    "1042380800": [
+        "Deathbird",
+        "Stormhill - Warmaster's Shack, Stormgate"
+    ],
+    "1042370800": [
+        "Crucible Knight Boss",
+        "Limgrave - Gatefront, Stormhill Evergaol, Groveside Cave Entrance, Limgrave Tunnels Entrance"
+    ],
+    "1042360800": [
+        "Tree Sentinel",
+        "Limgrave - Church of Elleh, Stranded Graveyard Exit"
+    ],
+    "10000850": [
+        "Margit, the Fell Omen",
+        "Stormveil Castle"
+    ],
+    "1044320342": [
+        "Night's Cavalry",
+        "Weeping Peninsula - Castle Morne Approach North"
+    ],
+    "1044320340": [
+        "Deathbird",
+        "Weeping Peninsula - Castle Morne Approach North"
+    ],
+    "1043330800": [
+        "Erdtree Avatar Boss",
+        "Weeping Peninsula - Minor Erdtree, Tombsward Catacombs Entrance, Morne Tunnel Entrance"
+    ],
+    "1042330800": [
+        "Ancient Hero of Zamor Boss",
+        "Weeping Peninsula - Tombsward; Weeping Evergaol; Tombsward Cave Entrance"
+    ],
+    "10000800": [
+        "Godrick the Grafted",
+        "Stormveil Castle"
+    ],
+    "1043360800": [
+        "Flying Dragon Agheel",
+        "Limgrave - Agheel Lake, Dragon-Burnt Ruins"
+    ],
+    "12010800": [
+        "Dragonkin Soldier of Nokstella",
+        "Ainsel River"
+    ],
+    "1035500800": [
+        "Royal Knight Loretta",
+        "Liurnia of the Lakes - Caria Manor"
+    ],
+    "1034480800": [
+        "Royal Revenant Boss",
+        "Liurnia of the Lakes - Northern Liurnia Lake Shore, Kingsrealm Ruins"
+    ],
+    "32020800": [
+        "Ringblade Crystalian Boss",
+        "Raya Lucaria Crystal Tunnel"
+    ],
+    "31060800": [
+        "Crystalian Staff Spear Duo",
+        "Academy Crystal Cave"
+    ],
+    "31050800": [
+        "Bloodhound Knight Boss",
+        "Lakeside Crystal Cave"
+    ],
+    "31040800": [
+        "Cleanrot Knight Boss",
+        "Stillwater Cave"
+    ],
+    "30060800": [
+        "Scepter Erdtree Burial Watchdog Boss",
+        "Cliffbottom Catacombs"
+    ],
+    "30050850": [
+        "Black Knife Assassin Boss",
+        "Black Knife Catacombs"
+    ],
+    "30050800": [
+        "Cemetery Shade and Skeletons",
+        "Black Knife Catacombs"
+    ],
+    "30030800": [
+        "Crucible Spiritcaller Snail",
+        "Road's End Catacombs"
+    ],
+    "18000800": [
+        "Ulcerated Tree Spirit Boss",
+        "Stranded Graveyard"
+    ],
+    "14000850": [
+        "Red Wolf of Radagon",
+        "Academy of Raya Lucaria"
+    ],
+    "12080800": [
+        "Ancestor Spirit",
+        "Siofra River - Boss"
+    ],
+    "10010800": [
+        "Grafted Scion Boss",
+        "Chapel of Anticipation"
+    ],
+    "1049390800": [
+        "Nox Duo",
+        "Caelid - West Sellia, Sellia Crystal Tunnel Entrance"
+    ],
+    "1048400800": [
+        "Mad Pumpkin Head Duo",
+        "Caelid - Deep Siofra Well; Greyoll's Dragonbarrow - Dragonbarrow West"
+    ],
+    "39200800": [
+        "Magma Wyrm Makar",
+        "Ruin-Strewn Precipice"
+    ],
+    "32080800": [
+        "Regular Fallingstar Beast",
+        "Sellia Crystal Tunnel"
+    ],
+    "32070800": [
+        "Magma Wyrm Boss",
+        "Gael Tunnel"
+    ],
+    "31210800": [
+        "Frenzied Duelist",
+        "Gaol Cave"
+    ],
+    "31200800": [
+        "Cleanrot Knight Duo",
+        "Abandoned Cave"
+    ],
+    "31110800": [
+        "Putrid Crystalian Trio",
+        "Sellia Hideaway"
+    ],
+    "30150800": [
+        "Cemetery Shade Boss",
+        "Caelid Catacombs"
+    ],
+    "30140800": [
+        "Erdtree Burial Watchdog Duo",
+        "Minor Erdtree Catacombs"
+    ],
+    "14000801": [
+        "Rennala 1",
+        "Academy of Raya Lucaria"
+    ],
+    "14000800": [
+        "Rennala 2",
+        "Academy of Raya Lucaria"
+    ],
+    "1051360800": [
+        "Crucible Misbegotten Duo",
+        "Caelid - Redmane Castle"
+    ],
+    "1040530800": [
+        "Sanguine Noble Boss",
+        "Altus Plateau - Bower of Bounty, Writheblood Ruins"
+    ],
+    "1039440800": [
+        "Tibia Mariner Boss",
+        "Liurnia of the Lakes - Jarburg, Divine Tower of Liurnia Entrance"
+    ],
+    "1039430340": [
+        "Night's Cavalry",
+        "Liurnia of the Lakes - Liurnia Highway Far North"
+    ],
+    "1038510800": [
+        "Demi-Human Queen Gilika",
+        "Altus Plateau - Erdtree-Gazing Hill, Lux Ruins"
+    ],
+    "1038480800": [
+        "Erdtree Avatar Boss",
+        "Bellum Highway - Frenzied Flame Village, Minor Erdtree"
+    ],
+    "1038410800": [
+        "Adan, Thief of Fire",
+        "Liurnia of the Lakes - Laskyar Ruins, Malefactor's Evergaol"
+    ],
+    "1037460800": [
+        "Bell Bearing Hunter",
+        "Liurnia of the Lakes - Church of Vows"
+    ],
+    "1037420340": [
+        "Deathbird",
+        "Liurnia of the Lakes - Scenic Isle, Laskyar Ruins"
+    ],
+    "1036500800": [
+        "Onyx Lord Boss",
+        "Liurnia of the Lakes - Behind Caria Manor, Royal Grave Evergaol, Part of Ravine"
+    ],
+    "1036480340": [
+        "Night's Cavalry",
+        "Bellum Highway - East Raya Lucaria Gate"
+    ],
+    "1036450340": [
+        "Death Rite Bird",
+        "Liurnia of the Lakes - Gate Town Northwest"
+    ],
+    "1035420800": [
+        "Omenkiller Boss",
+        "Liurnia of the Lakes - West Albinauric Village"
+    ],
+    "1034500800": [
+        "Glintstone Dragon Adula",
+        "Liurnia of the Lakes - Ranni's Rise, Seluvis's Rise"
+    ],
+    "1033450800": [
+        "Bols, Carian Knight",
+        "Liurnia of the Lakes - Cuckoo's Evergaol, West of Meeting Place"
+    ],
+    "1033430800": [
+        "Erdtree Avatar Boss",
+        "Liurnia of the Lakes - Minor Erdtree, Road's End Catacombs Entrance"
+    ],
+    "32050800": [
+        "Crystalian Ringblade Spear Duo",
+        "Altus Tunnel"
+    ],
+    "32040800": [
+        "Stonedigger Troll",
+        "Old Altus Tunnel"
+    ],
+    "31190800": [
+        "Invisible Black Knife Assassin Boss",
+        "Sage's Cave"
+    ],
+    "31180800": [
+        "Miranda Omenkiller Duo",
+        "Perfumer's Grotto"
+    ],
+    "30120800": [
+        "Misbegotten Perfumer Duo",
+        "Unsightly Catacombs"
+    ],
+    "30080800": [
+        "Ancient Hero of Zamor Boss",
+        "Sainted Hero's Grave"
+    ],
+    "16000860": [
+        "Abductor Virgin Duo",
+        "Volcano Manor"
+    ],
+    "1049390850": [
+        "Battlemage Hugues",
+        "Caelid - West Sellia, Sellia Crystal Tunnel Entrance"
+    ],
+    "1049380800": [
+        "Commander O'Neil",
+        "Caelid - East Aeonia Swamp"
+    ],
+    "1049370850": [
+        "Death Rite Bird",
+        "Caelid - Southern Aeonia Swamp Bank"
+    ],
+    "1049370800": [
+        "Night's Cavalry",
+        "Caelid - Southern Aeonia Swamp Bank"
+    ],
+    "1047400800": [
+        "Putrid Avatar Boss",
+        "Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance"
+    ],
+    "1039540800": [
+        "Elemer of the Briar",
+        "Altus Plateau - Shaded Castle"
+    ],
+    "34120800": [
+        "Onyx Lord Boss",
+        "Divine Tower of West Altus"
+    ],
+    "31090800": [
+        "Demi-Human Queen Margot",
+        "Volcano Cave"
+    ],
+    "31070800": [
+        "Kindred of Rot Duo",
+        "Seethewater Cave"
+    ],
+    "30130800": [
+        "Grave Warden Duelist Boss",
+        "Auriza Side Tomb"
+    ],
+    "30100800": [
+        "Crucible Knight Duo",
+        "Auriza Hero's Grave"
+    ],
+    "30090800": [
+        "Red Wolf of the Champion",
+        "Gelmir Hero's Grave"
+    ],
+    "30070800": [
+        "Lightning Erdtree Burial Watchdog Boss",
+        "Wyndham Catacombs"
+    ],
+    "12090800": [
+        "Regal Ancestor Spirit",
+        "Nokron, Eternal City - Boss"
+    ],
+    "12020850": [
+        "Mimic Tear",
+        "Nokron"
+    ],
+    "12020800": [
+        "Valiant Gargoyles",
+        "Nokron"
+    ],
+    "1052380800": [
+        "Starscourge Radahn",
+        "Southeast Caelid"
+    ],
+    "1042550800": [
+        "Godskin Apostle",
+        "Altus Plateau - Windmill Heights"
+    ],
+    "1041530800": [
+        "Wormface Boss",
+        "Altus Plateau - Woodfolk Ruins, Minor Erdtree"
+    ],
+    "1041510801": [
+        "Tree Sentinel",
+        "Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance"
+    ],
+    "1041510800": [
+        "Tree Sentinel",
+        "Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance"
+    ],
+    "1041500800": [
+        "Regular Fallingstar Beast",
+        "Altus Plateau - South of Tree Sentinel Duo"
+    ],
+    "1040520800": [
+        "Black Knife Assassin Boss",
+        "Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance"
+    ],
+    "1039510800": [
+        "Night's Cavalry",
+        "Altus Plateau - Altus Highway Junction"
+    ],
+    "1039500800": [
+        "Godefroy the Grafted",
+        "Altus Plateau - Golden Lineage Evergaol"
+    ],
+    "1034450800": [
+        "Glintstone Dragon Smarag",
+        "Liurnia of the Lakes - Meeting Place, Academy Crystal Cave Entrance"
+    ],
+    "31190850": [
+        "Necromancer Garris",
+        "Sage's Cave"
+    ],
+    "1045520800": [
+        "Draconic Tree Sentinel Boss",
+        "Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance"
+    ],
+    "1044530800": [
+        "Deathbird",
+        "Capital Outskirts - Minor Erdtree"
+    ],
+    "1043530800": [
+        "Bell Bearing Hunter",
+        "Capital Outskirts - Northeast Outer Wall Battleground, Hermit Merchant's Shack"
+    ],
+    "1038520340": [
+        "Tibia Mariner Boss",
+        "Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance"
+    ],
+    "1037540810": [
+        "Ulcerated Tree Spirit Boss",
+        "Mt. Gelmir - Minor Erdtree, Seethewater Cave Entrance"
+    ],
+    "1037530800": [
+        "Demi-Human Queen Maggie",
+        "Mt. Gelmir - Primeval Sorcerer Azur, Gelmir Hero's Grave Entrance"
+    ],
+    "1036540800": [
+        "Full-Grown Fallingstar Beast",
+        "Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance"
+    ],
+    "1035530800": [
+        "Magma Wyrm Boss",
+        "Mt. Gelmir - Seethewater Terminus"
+    ],
+    "16000850": [
+        "Godskin Noble Boss",
+        "Volcano Manor"
+    ],
+    "12040800": [
+        "Astel, Naturalborn of the Void",
+        "Ainsel River - Boss"
+    ],
+    "12030850": [
+        "Lichdragon Fortissax",
+        "Deeproot Depths"
+    ],
+    "12030800": [
+        "Fia's Champions",
+        "Deeproot Depths"
+    ],
+    "12020830": [
+        "Dragonkin Soldier Boss",
+        "Siofra River"
+    ],
+    "11000850": [
+        "Goldfrey, First Elden Lord",
+        "Leyndell, Royal Capital"
+    ],
+    "11000800": [
+        "Morgott, the Omen King",
+        "Leyndell, Royal Capital"
+    ],
+    "1049520800": [
+        "Black Blade Kindred",
+        "Mountaintops of the Giants - Before Grand Lift of Rold"
+    ],
+    "1041520800": [
+        "Ancient Dragon Lansseax",
+        "Altus Plateau - Rampartside Path, Altus Tunnel Entrance"
+    ],
+    "1037510800": [
+        "Ancient Dragon Lansseax",
+        "Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit"
+    ],
+    "34140850": [
+        "Fell Twin Duo",
+        "Divine Tower of East Altus"
+    ],
+    "31220800": [
+        "Godskin Spiritcaller Snail",
+        "Spiritcaller Cave"
+    ],
+    "30180800": [
+        "Ulcerated Tree Spirit Boss",
+        "Giants' Mountaintop Catacombs"
+    ],
+    "30170800": [
+        "Ancient Hero of Zamor Boss",
+        "Giant-Conquering Hero's Grave"
+    ],
+    "16000801": [
+        "God-Devouring Serpent",
+        "Volcano Manor"
+    ],
+    "16000800": [
+        "Rykard, Lord of Blasphemy",
+        "Volcano Manor"
+    ],
+    "1051570800": [
+        "Commander Niall",
+        "Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook"
+    ],
+    "35000850": [
+        "Esgar, Priest of Blood",
+        "Subterranean Shunning-Grounds"
+    ],
+    "35000800": [
+        "Mohg, the Omen",
+        "Subterranean Shunning-Grounds"
+    ],
+    "12030390": [
+        "Crucible Knight Siluria",
+        "Deeproot Depths"
+    ],
+    "12010850": [
+        "Dragonkin Soldier Boss",
+        "Lake of Rot"
+    ],
+    "1053560800": [
+        "Roundtable Knight Vyke",
+        "Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller Cave Entrance"
+    ],
+    "1052560800": [
+        "Erdtree Avatar Duo",
+        "Mountaintops of the Giants - Whiteridge Road, Minor Erdtree"
+    ],
+    "1052520801": [
+        "Fire Giant 1",
+        "Southeast Mountaintops"
+    ],
+    "1052520800": [
+        "Fire Giant 2",
+        "Southeast Mountaintops"
+    ],
+    "1050570800": [
+        "Death Rite Bird",
+        "Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree"
+    ],
+    "1048510800": [
+        "Night's Cavalry",
+        "Mountaintops of the Giants - Forbidden Lands Midway"
+    ],
+    "13000850": [
+        "Godskin Duo",
+        "Crumbling Farum Azula"
+    ],
+    "1048370800": [
+        "Decaying Ekzykes",
+        "Caelid - Caelid Highway South"
+    ],
+    "1033420800": [
+        "Alecto, Black Knife Ringleader",
+        "Moonlight Altar - Ringleader's Evergaol"
+    ],
+    "34130800": [
+        "Godskin Apostle",
+        "Divine Tower of Caelid"
+    ],
+    "31100800": [
+        "Beastman of Farum Azula Duo",
+        "Dragonbarrow Cave"
+    ],
+    "30160800": [
+        "Putrid Tree Spirit Boss",
+        "War-Dead Catacombs"
+    ],
+    "13000801": [
+        "Beast Clergyman",
+        "Crumbling Farum Azula"
+    ],
+    "13000800": [
+        "Maliketh, the Black Blade",
+        "Crumbling Farum Azula"
+    ],
+    "11050850": [
+        "Sir Gideon Ofnir, the All-Knowing",
+        "Leyndell, Ashen Capital"
+    ],
+    "1054560800": [
+        "Borealis the Freezing Fog",
+        "Northeast Mountaintops"
+    ],
+    "32110800": [
+        "Astel, Stars of Darkness",
+        "Yelough Anix Tunnel"
+    ],
+    "31120800": [
+        "Misbegotten Crusader",
+        "Cave of the Forlorn"
+    ],
+    "30200800": [
+        "Stray Mimic Tear",
+        "Hidden Path to the Haligtree"
+    ],
+    "30190800": [
+        "Putrid Grave Warden Duelist",
+        "Consecrated Snowfield Catacombs"
+    ],
+    "11050801": [
+        "Godfrey, First Elden Lord",
+        "Leyndell, Ashen Capital"
+    ],
+    "11050800": [
+        "Hoarah Loux, Warrior",
+        "Leyndell, Ashen Capital"
+    ],
+    "1052410850": [
+        "Night's Cavalry",
+        "Greyoll's Dragonbarrow - Southeast Farum Greatbridge, Lenne's Rise"
+    ],
+    "1052410800": [
+        "Flying Dragon Greyll",
+        "Greyoll's Dragonbarrow - Southeast Farum Greatbridge, Lenne's Rise"
+    ],
+    "1051430800": [
+        "Black Blade Kindred",
+        "Greyoll's Dragonbarrow - Bestial Sanctum"
+    ],
+    "1051400800": [
+        "Putrid Avatar Boss",
+        "Greyoll's Dragonbarrow - Minor Erdtree, Dragonbarrow Cave Entrance"
+    ],
+    "1048410800": [
+        "Bell Bearing Hunter",
+        "Greyoll's Dragonbarrow - Isolated Merchant's Shack"
+    ],
+    "1034420800": [
+        "Glintstone Dragon Adula",
+        "Moonlight Altar - Moonfolk Ruins"
+    ],
+    "19000810": [
+        "Radagon of the Golden Order",
+        "Stone Platform"
+    ],
+    "19000800": [
+        "Elden Beast",
+        "Stone Platform"
+    ],
+    "13000830": [
+        "Dragonlord Placidusax",
+        "Crumbling Farum Azula"
+    ],
+    "1248550801": [
+        "Night's Cavalry",
+        "Southwest Mountaintops"
+    ],
+    "1248550800": [
+        "Night's Cavalry",
+        "Southwest Mountaintops"
+    ],
+    "1050570850": [
+        "Putrid Avatar Boss",
+        "Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree"
+    ],
+    "1050560800": [
+        "Great Wyrm Theodorix",
+        "Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree, Albinauric Rise, Cave of the Forlorn Entrance"
+    ],
+    "1048570800": [
+        "Death Rite Bird",
+        "Consecrated Snowfield - Ordina, Liturgical Town"
+    ],
+    "15000850": [
+        "Loretta, Knight of the Haligtree",
+        "Miquella's Haligtree"
+    ],
+    "12050800": [
+        "Mohg, Lord of Blood",
+        "Mohgwyn Palace"
+    ],
+    "15000800": [
+        "Malenia, Blade of Miquella",
+        "Miquella's Haligtree - Elphael"
+    ],
+    "2046410800": [
+        "Knight of the Solitary Gaol",
+        "Gravesite Plain - Western Nameless Mausoleum, East of Prospect Town, West of Scorched Ruins"
+    ],
+    "41000800": [
+        "Demi-Human Swordmaster Onze",
+        "Belurat Gaol"
+    ],
+    "2045440800": [
+        "Ghostflame Dragon Boss",
+        "Gravesite Plain - Dragon Lake, Belurat Gaol Entrance"
+    ],
+    "43010800": [
+        "Ancient Dragon-Man",
+        "Dragon's Pit"
+    ],
+    "40000800": [
+        "Twin Axe Death Knight",
+        "Fog Rift Catacombs"
+    ],
+    "2046380800": [
+        "Dancer of Ranah",
+        "Cerulean Coast - Southern Nameless Mausoleum, Far Southwest Coast"
+    ],
+    "20000800": [
+        "Divine Beast Dancing Lion",
+        "Belurat, Tower Settlement"
+    ],
+    "2051450720": [
+        "Count Ymir, Mother of Fingers",
+        "Scadu Altus - Cathedral of Manus Metyr"
+    ],
+    "2049440710": [
+        "Dryleaf Dane",
+        "Scadu Altus - Moorth Ruins, Bonny Village West Entrance"
+    ],
+    "43000800": [
+        "Chief Bloodfiend Boss",
+        "Rivermouth Cave"
+    ],
+    "41010800": [
+        "Curseblade Labirith",
+        "Bonny Gaol"
+    ],
+    "2048440800": [
+        "Rellana, Twin Moon Knight",
+        "Gravesite Plain - East Castle Ensis"
+    ],
+    "2048380850": [
+        "Ghostflame Dragon and Skeletons",
+        "Cerulean Coast - Dragon Area, Beach-Facing Coffin"
+    ],
+    "2046450800": [
+        "Red Bear",
+        "Gravesite Plain - Northern Nameless Mausoleum"
+    ],
+    "2046400800": [
+        "Demi-Human Queen Marigga",
+        "Cerulean Coast - Demi-Human Beach, Ravine North"
+    ],
+    "41020800": [
+        "Lamenter",
+        "Lamenter's Gaol"
+    ],
+    "40010800": [
+        "Longhaft Death Knight",
+        "Scorpion River Catacombs"
+    ],
+    "2049450800": [
+        "Ralva the Great Red Bear",
+        "Scadu Altus - Moorth Highway Camp, South Bear Woods"
+    ],
+    "2049430850": [
+        "Black Knight Edredd",
+        "Scadu Altus - Moorth Highway South, Fort of Reprimand"
+    ],
+    "2049430800": [
+        "Ghostflame Dragon Boss",
+        "Scadu Altus - Moorth Highway South, Fort of Reprimand"
+    ],
+    "2047450800": [
+        "Black Knight Garrew",
+        "Gravesite Plain - North Fog Rift Fort"
+    ],
+    "21000850": [
+        "Golden Hippopotamus",
+        "Shadow Keep"
+    ],
+    "2051440800": [
+        "Rakshasa",
+        "Scadu Altus - Eastern Nameless Mausoleum, Hippo Duo Pond"
+    ],
+    "2050480800": [
+        "Scadutree Avatar",
+        "Scaduview - South Scadutree Base, Lower Shadow Keep Exit"
+    ],
+    "2049410800": [
+        "Jagged Peak Drake Boss",
+        "Foot of the Jagged Peak - Drake Lake"
+    ],
+    "2047390800": [
+        "Death Rite Bird",
+        "Charo's Hidden Grave - South Central Lake"
+    ],
+    "2044470800": [
+        "Rugalea the Great Red Bear",
+        "Rauh Base - West Scorpion River"
+    ],
+    "22000800": [
+        "Putrescent Knight",
+        "Stone Coffin Fissure"
+    ],
+    "2049480800": [
+        "Commander Gaius",
+        "Scaduview - Specimen Storehouse Exit, Commander Gaius' Arena"
+    ],
+    "21010801": [
+        "Messmer the Impaler",
+        "Specimen Storehouse - Shadow Tower"
+    ],
+    "21010800": [
+        "Base Serpent Messmer",
+        "Specimen Storehouse - Shadow Tower"
+    ],
+    "2052430800": [
+        "Jori, Elder Inquisitor",
+        "Abyssal Woods - Forsaken Graveyard, Darklight Catacombs Exit"
+    ],
+    "2052480800": [
+        "Regular Fallingstar Beast",
+        "Scaduview - Fingerstone Hill Crater"
+    ],
+    "2050480860": [
+        "Tree Sentinel",
+        "Scaduview - North Hinterland"
+    ],
+    "2050470800": [
+        "Tree Sentinel",
+        "Scaduview - South Hinterland"
+    ],
+    "2046460800": [
+        "Divine Beast Dancing Lion and Basilisks",
+        "Ancient Ruins of Rauh - Divine Beast Pantheon"
+    ],
+    "2044450800": [
+        "Romina, Saint of the Bud",
+        "Ancient Ruins of Rauh - South Church of the Bud, Sealing Tree"
+    ],
+    "28000800": [
+        "Midra, Lord of Frenzied Flame",
+        "Midra's Manse"
+    ],
+    "25000800": [
+        "Metyr, Mother of Fingers",
+        "Finger Birthing Grounds"
+    ],
+    "2054390850": [
+        "Ancient Dragon Senessax",
+        "Jagged Peak - Senessax Lake"
+    ],
+    "2052400800": [
+        "Jagged Peak Drake Boss",
+        "Foot of the Jagged Peak - Foot of the Jagged Peak, Drake Duo Area"
+    ],
+    "20010801": [
+        "Promised Consort Radahn",
+        "Enir-Ilim"
+    ],
+    "20010800": [
+        "Radahn, Consort of Miquella",
+        "Enir-Ilim"
+    ],
+    "2054390800": [
+        "Bayle the Dread",
+        "Jagged Peak - Jagged Peak Summit, Bayle Arena"
+    ]
+}
