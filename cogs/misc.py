@@ -19,7 +19,11 @@ class Misc(commands.Cog, name='Miscellaneous'):
     async def use_last_spoiler_log(self, 
         ctx : discord.ApplicationContext, 
         limit : Option(int, description='The number of messages to search through.', default=100),
-        include_attachment_info : Option(str, description='Whether to include the filename of the attachment and the date and time it was sent.', choices=['yes', 'no'], default='yes')
+        include_attachment_info : Option(str,
+            description='Whether to include the filename of the attachment and the date and time it was sent.',
+            choices=['yes', 'no'],
+            default='yes'
+        )
     ):
         await ctx.response.defer()
 
