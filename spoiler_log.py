@@ -18,8 +18,7 @@ with open('boss_info_by_id.json') as f:
 
 
 class LogParseException(Exception):
-    def __init__(self, message):
-        super().__init__(message)
+    pass
 
 
 class SpoilerLog:
