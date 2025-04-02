@@ -27,5 +27,8 @@ def chunk_response(response, max_chunk_length=2000, add_spoiler_tags=False):
 
 
 async def send_chunked_response(ctx : discord.ApplicationContext, response : str, **kwargs):
-    for chunk in chunk_response(response, **kwargs):
-        await ctx.respond(chunk)
+    chunks = chunk_response(response, **kwargs)
+    await ctx.respond(chunks[0])
+
+    for chunk in chunks[1:]:
+        await ctx.send(chunk)
