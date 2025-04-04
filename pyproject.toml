@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "woodchipperbot"
+version = "0.1.0"
+description = ""
+authors = ["Eoin Manning"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dotenv = "^0.9.9"
+py-cord = "^2.6.1"
+thefuzz = "^0.22.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
