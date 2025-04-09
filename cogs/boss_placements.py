@@ -43,7 +43,7 @@ def get_bosses_split_phases(ctx : discord.AutocompleteContext):
 
 
 def get_guild_boss_list_names(ctx : discord.AutocompleteContext):
-    path_stems = {path.stem for path in Path(f'Boss Lists\\{ctx.interaction.guild_id}').glob('*.txt')}
+    path_stems = {path.stem for path in Path(f'Boss Lists/{ctx.interaction.guild_id}').glob('*.txt')}
 
     return sorted([
         path_stem for path_stem in path_stems
@@ -52,7 +52,7 @@ def get_guild_boss_list_names(ctx : discord.AutocompleteContext):
 
 def get_all_boss_list_names(ctx : discord.AutocompleteContext):
     path_stems = {
-        path.stem for path in Path(f'Boss Lists\\{ctx.interaction.guild_id}').glob('*.txt')
+        path.stem for path in Path(f'Boss Lists/{ctx.interaction.guild_id}').glob('*.txt')
     } | {
         path.stem for path in Path('Boss Lists').glob('*.txt')
     }
@@ -104,10 +104,10 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         spoiler : Option(str, description='Whether to mark the result as a spoiler.', choices=['yes', 'no'], default='no')
     ):
         try:
-            with open(f'Boss Lists\\{ctx.guild_id}\\{list_name}.txt') as f:
+            with open(f'Boss Lists/{ctx.guild_id}/{list_name}.txt') as f:
                 boss_list_text = f.read()
         except FileNotFoundError:
-            with open(f'Boss Lists\\{list_name}.txt') as f:
+            with open(f'Boss Lists/{list_name}.txt') as f:
                 boss_list_text = f.read()
 
         response = ''
@@ -131,10 +131,10 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         spoiler : Option(str, description='Whether to mark the result as a spoiler.', choices=['yes', 'no'], default='no')
     ):
         try:
-            with open(f'Boss Lists\\{ctx.guild_id}\\{list_name}.txt') as f:
+            with open(f'Boss Lists/{ctx.guild_id}/{list_name}.txt') as f:
                 boss_list_text = f.read()
         except FileNotFoundError:
-            with open(f'Boss Lists\\{list_name}.txt') as f:
+            with open(f'Boss Lists/{list_name}.txt') as f:
                 boss_list_text = f.read()
 
         response = 'No.'
@@ -157,7 +157,7 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         ctx : discord.ApplicationContext,
         list_name : str
     ):
-        list_file_path = f'Boss Lists\\{ctx.interaction.guild_id}\\{list_name}.txt'
+        list_file_path = f'Boss Lists/{ctx.interaction.guild_id}/{list_name}.txt'
 
         if Path(list_file_path).exists():
             response = f'The custom boss list `{list_name}` already exists. Use `/replace-boss-list` to replace its contents.'
@@ -187,7 +187,7 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         ctx : discord.ApplicationContext,
         list_name : Option(str, description='The name of the boss list.', autocomplete=get_guild_boss_list_names)
     ):
-        list_file_path = f'Boss Lists\\{ctx.interaction.guild_id}\\{list_name}.txt'
+        list_file_path = f'Boss Lists/{ctx.interaction.guild_id}/{list_name}.txt'
 
         if ctx.message.attachments:
             old_list_body = await ctx.message.attachments[0].read()
@@ -213,8 +213,8 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         list_name : Option(str, description='The name of the boss list.', autocomplete=get_guild_boss_list_names),
         new_name : str
     ):
-        Path(f'Boss Lists\\{ctx.interaction.guild_id}\\{list_name}.txt').rename(
-            Path(f'Boss Lists\\{ctx.interaction.guild_id}\\{new_name}.txt')
+        Path(f'Boss Lists/{ctx.interaction.guild_id}/{list_name}.txt').rename(
+            Path(f'Boss Lists/{ctx.interaction.guild_id}/{new_name}.txt')
         )
 
         ctx.respond(f'The custom boss list `{list_name}` has been renamed `{new_name}`.')
@@ -224,7 +224,7 @@ class BossPlacements(commands.Cog, name='Boss Placements'):
         ctx : discord.ApplicationContext,
         list_name : Option(str, description='The name of the boss list.', autocomplete=get_guild_boss_list_names)
     ):
-        Path(f'Boss Lists\\{ctx.interaction.guild_id}\\{list_name}.txt').unlink()
+        Path(f'Boss Lists/{ctx.interaction.guild_id}/{list_name}.txt').unlink()
         ctx.respond(f'The custom boss list `{list_name}` has been deleted. ❌')
 
 
