@@ -12,7 +12,7 @@ def get_items(ctx : discord.AutocompleteContext):
 
 
 def get_guild_item_list_names(ctx : discord.AutocompleteContext):
-    path_stems = {path.stem for path in Path(f'Item Lists\\{ctx.interaction.guild_id}').glob('*.txt')}
+    path_stems = {path.stem for path in Path(f'Item Lists/{ctx.interaction.guild_id}').glob('*.txt')}
 
     return sorted([
         path_stem for path_stem in path_stems
@@ -21,7 +21,7 @@ def get_guild_item_list_names(ctx : discord.AutocompleteContext):
 
 def get_all_item_list_names(ctx : discord.AutocompleteContext):
     path_stems = {
-        path.stem for path in Path(f'Item Lists\\{ctx.interaction.guild_id}').glob('*.txt')
+        path.stem for path in Path(f'Item Lists/{ctx.interaction.guild_id}').glob('*.txt')
     } | {
         path.stem for path in Path('Item Lists').glob('*.txt')
     }
@@ -70,10 +70,10 @@ class ItemPlacements(commands.Cog, name='Item Placements'):
         spoiler : Option(str, description='Whether to mark the result as a spoiler.', choices=['yes', 'no'], default='no')
     ):
         try:
-            with open(f'Item Lists\\{ctx.guild_id}\\{list_name}.txt') as f:
+            with open(f'Item Lists/{ctx.guild_id}/{list_name}.txt') as f:
                 item_list_text = f.read()
         except FileNotFoundError:
-            with open(f'Item Lists\\{list_name}.txt') as f:
+            with open(f'Item Lists/{list_name}.txt') as f:
                 item_list_text = f.read()
 
         item_location_dict = copy.deepcopy(self.bot.spoiler_log.item_list_locations(
@@ -127,7 +127,7 @@ class ItemPlacements(commands.Cog, name='Item Placements'):
         ctx : discord.ApplicationContext,
         list_name : str
     ):
-        list_file_path = f'Item Lists\\{ctx.interaction.guild_id}\\{list_name}.txt'
+        list_file_path = f'Item Lists/{ctx.interaction.guild_id}/{list_name}.txt'
 
         if Path(list_file_path).exists():
             response = f'The custom item list `{list_name}` already exists. Use `/replace-item-list` to replace its contents.'
@@ -150,7 +150,7 @@ class ItemPlacements(commands.Cog, name='Item Placements'):
         ctx : discord.ApplicationContext,
         list_name : Option(str, description='The name of the item list.', autocomplete=get_guild_item_list_names)
     ):
-        list_file_path = f'Item Lists\\{ctx.interaction.guild_id}\\{list_name}.txt'
+        list_file_path = f'Item Lists/{ctx.interaction.guild_id}/{list_name}.txt'
 
         if ctx.message.attachments:
             list_body = await ctx.message.attachments[0].read()
@@ -169,8 +169,8 @@ class ItemPlacements(commands.Cog, name='Item Placements'):
         list_name : Option(str, description='The name of the item list.', autocomplete=get_guild_item_list_names),
         new_name : str
     ):
-        Path(f'Item Lists\\{ctx.interaction.guild_id}\\{list_name}.txt').rename(
-            Path(f'Item Lists\\{ctx.interaction.guild_id}\\{new_name}.txt')
+        Path(f'Item Lists/{ctx.interaction.guild_id}/{list_name}.txt').rename(
+            Path(f'Item Lists/{ctx.interaction.guild_id}/{new_name}.txt')
         )
 
         ctx.respond(f'The custom item list `{list_name}` has been renamed `{new_name}`.')
@@ -180,7 +180,7 @@ class ItemPlacements(commands.Cog, name='Item Placements'):
         ctx : discord.ApplicationContext,
         list_name : Option(str, description='The name of the item list.', autocomplete=get_guild_item_list_names)
     ):
-        Path(f'Item Lists\\{ctx.interaction.guild_id}\\{list_name}.txt').unlink()
+        Path(f'Item Lists/{ctx.interaction.guild_id}/{list_name}.txt').unlink()
         ctx.respond(f'The custom item list `{list_name}` has been deleted. ❌')
 
 
