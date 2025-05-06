@@ -13,12 +13,10 @@ TIME_FORMATTING_STRING = r'%#I:%M %p' if platform.system() == 'Windows' else r'%
 class Misc(commands.Cog, name='Miscellaneous'):
     def __init__(self, bot):
         self.bot = bot
-
     
     @discord.slash_command(name='show-seed', description='Displays the seed associated with the current log file.')
     async def show_seed(self, ctx : discord.ApplicationContext):
         await ctx.respond(f'Here is the seed of the current log file: {self.bot.spoiler_log.seed} 🌰.')
-        
 
     @discord.slash_command(name='use-last-spoiler-log', description='Sets the current spoiler log to be the last one sent in this channel.')
     async def use_last_spoiler_log(self, 
@@ -52,7 +50,6 @@ class Misc(commands.Cog, name='Miscellaneous'):
                 break
 
         await ctx.followup.send(response)
-
 
     @discord.slash_command(name='help', description='Displays this help message.')
     async def help(self, ctx : discord.ApplicationContext):
