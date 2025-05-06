@@ -16,7 +16,12 @@ class Misc(commands.Cog, name='Miscellaneous'):
     
     @discord.slash_command(name='show-seed', description='Displays the seed associated with the current log file.')
     async def show_seed(self, ctx : discord.ApplicationContext):
-        await ctx.respond(f'Here is the seed of the current log file: {self.bot.spoiler_log.seed} 🌰.')
+        try:
+            response = f'Here is the seed of the current log file: {self.bot.spoiler_log.seed} 🌰.'
+        except AttributeError:
+            response = "Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."
+
+        ctx.respond(response)
 
     @discord.slash_command(name='use-last-spoiler-log', description='Sets the current spoiler log to be the last one sent in this channel.')
     async def use_last_spoiler_log(self, 
