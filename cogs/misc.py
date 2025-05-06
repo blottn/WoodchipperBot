@@ -17,7 +17,7 @@ class Misc(commands.Cog, name='Miscellaneous'):
     @discord.slash_command(name='show-seed', description='Displays the seed associated with the current log file.')
     async def show_seed(self, ctx : discord.ApplicationContext):
         try:
-            response = f'Here is the seed of the current log file: {self.bot.spoiler_log.seed} 🌰.'
+            response = f'Here is the seed of the current log file: `{self.bot.spoiler_log.seed}` 🌰.'
         except AttributeError:
             response = "Looks like you haven't uploaded a spoiler log file yet. 🤓 Try uploading one and then trying your command again."
 
