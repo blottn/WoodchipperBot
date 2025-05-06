@@ -23,7 +23,7 @@ class LogParseException(Exception):
 
 class SpoilerLog:
     def __init__(self, log_lines):
-        if (m := re.match(r'^.*seed:(\d+).*$', log_lines[0])):
+        if (m := re.match(r'^.*seed:([^\s]+).*$', log_lines[0])):
             self.log_lines = log_lines
             self.seed = m.group(1)
         else:
