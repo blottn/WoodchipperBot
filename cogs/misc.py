@@ -46,7 +46,7 @@ class Misc(commands.Cog, name='Miscellaneous'):
 
                 if include_attachment_info == 'yes':
                     response = f'Got it! Log file `{attachment_filename}` ' + \
-                        f'with seed {self.bot.spoiler_log.seed}` ' + \
+                        f'with seed `{self.bot.spoiler_log.seed}` ' + \
                         f'(from {message_datetime.strftime(DATE_FORMATTING_STRING)} ' + \
                         f'at {message_datetime.strftime(TIME_FORMATTING_STRING)}) added and chopped. 🪓'
                 else:
