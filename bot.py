@@ -25,7 +25,7 @@ async def on_message(message):
 
         if parse_result:
             bot.spoiler_log = parse_result[0]
-            await message.channel.send('Got it! Log file added and chopped. 🪓 Here is your seed: {bot.spoiler_log.seed}. 🌰')
+            await message.channel.send('Got it! Log file added and chopped. 🪓 Here is your seed: `{bot.spoiler_log.seed}`. 🌰')
 
 
 bot.load_extension('cogs.item_placements')
